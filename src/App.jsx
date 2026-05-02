@@ -1,36 +1,34 @@
-import { useEffect, useState } from "react";
-import { getEstudiantes } from "./services/estudianteService";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import EstudiantesPage from './pages/EstudiantesPage';
+import InicioPage from './pages/InicioPage';
 
-function App(){
-  const[estudiantes, setEstudiantes] = useState([]);
-  useEffect(()=>{
-    getEstudiantes().then((datos)=>{
-      setEstudiantes(datos);
-    });
-  }, [])
+function App() {
+  return (
+    <BrowserRouter>
+      
+      <nav style={{ 
+        backgroundColor: '#0056b3', 
+        padding: '15px', 
+        marginBottom: '20px',
+        display: 'flex',
+        gap: '20px'
+      }}>
+        <h3 style={{ color: 'white', margin: '0', paddingRight: '20px' }}>🏋️‍♂️ Gym UMSA</h3>
+        
+        <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Inicio</Link>
+        <Link to="/estudiantes" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Universitarios</Link>
+      </nav>
 
-  return(
-    <div>
-      <h1>Lista de Estudiantes</h1>
-      <ul>
-        {estudiantes.map((estudiante) =>(
-          <li key={estudiante.idEstudiante}>
-              <strong>{estudiante.nombre} </strong><br />
-              <strong>Carnet de identidad </strong>{estudiante.ci} <br />
-              <strong>Telefono</strong>{estudiante.telefono} <br />
-              <strong>Regsitro Universitario </strong>{estudiante.registroUniversitario} <br />
-              <strong>Correo Institucional </strong>{estudiante.correo} <br />
-              <strong>Estado </strong>{estudiante.estado}
-          </li>
-        ))}
-        <li>
+      <div style={{ padding: '0 20px' }}>
+        <Routes>
+          <Route path="/" element={<InicioPage />} />
 
-        </li>
-      </ul>
-    </div>
+          <Route path="/estudiantes" element={<EstudiantesPage />} />
 
+        </Routes>
+      </div>
 
-
+    </BrowserRouter>
   );
 }
 
