@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import EstudiantesPage from './pages/EstudiantesPage';
 import InicioPage from './pages/InicioPage';
+import EntrenadoresPage from './pages/EntrenadoresPage';
+import EquiposPage from './pages/EquiposPage';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         
         <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Inicio</Link>
         <Link to="/estudiantes" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Universitarios</Link>
+        <Link to="/entrenadores" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Entrenadores</Link>
+        <Link to="/equipos" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Equipos</Link>
       </nav>
 
       <div style={{ padding: '0 20px' }}>
@@ -24,6 +28,8 @@ function App() {
           <Route path="/" element={<InicioPage />} />
 
           <Route path="/estudiantes" element={<EstudiantesPage />} />
+          <Route path="/entrenadores" element={<EntrenadoresPage />}/>
+          <Route path="/equipos" element={<EquiposPage />}/>
 
         </Routes>
       </div>

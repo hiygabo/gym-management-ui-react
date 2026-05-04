@@ -5,3 +5,7 @@ export const getEntrenadores = async () =>{
     return respuesta.data;
 
 }
+export const eliminarEntrenador = async (id) =>{
+    const respuesta = await api.delete(`/Entrenadores/${id}`);
+    return respuesta.data;
+}
