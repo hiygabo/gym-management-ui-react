@@ -62,6 +62,35 @@ function PlanesPage(){
         }
     }
 
+    return(
+        <div>
+            <h1>{planEditandoId ? "Editar plan" : "Registrar plan"}</h1>
+            <form onSubmit={handleSubmit}>
+                <input type="text" name="nombrePlan" value={formData.nombrePlan} onChange={handleChange} required/>
+                <button type="submit">
+                {planEditandoId ? "Editar" : "Registrar"}
+            </button>
+            {planEditandoId && (
+                <button type="button" onClick={cancelarEdicion}>Cancelar</button>
+            )}
+            </form>
+
+            <h1>Planes disponibles</h1>
+            <ul>
+                {planes.map((plan)=>(
+                    <li key={plan.idPlan}>
+                        <strong>Plan: {plan.nombrePlan}</strong>
+                        <button onClick={() => handleEliminar(plan.idPlan)}>Eliminar</button>
+                        <button onClick={() => handleEditar(plan)}>Editar</button>
+
+                    </li>
+                ))}
+            </ul>
+            
+        </div>
+
+    )
+
 
 
     

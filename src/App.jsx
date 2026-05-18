@@ -3,6 +3,7 @@ import EstudiantesPage from './pages/EstudiantesPage';
 import InicioPage from './pages/InicioPage';
 import EntrenadoresPage from './pages/EntrenadoresPage';
 import EquiposPage from './pages/EquiposPage';
+import PlanesPage from './pages/PlanesPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Link to="/estudiantes" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Universitarios</Link>
         <Link to="/entrenadores" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Entrenadores</Link>
         <Link to="/equipos" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Equipos</Link>
+        <Link to="/planes" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}> Planes</Link>
       </nav>
 
       <div style={{ padding: '0 20px' }}>
@@ -30,6 +32,7 @@ function App() {
           <Route path="/estudiantes" element={<EstudiantesPage />} />
           <Route path="/entrenadores" element={<EntrenadoresPage />}/>
           <Route path="/equipos" element={<EquiposPage />}/>
+          <Route path="/planes" element={<PlanesPage/>}/>
 
         </Routes>
       </div>

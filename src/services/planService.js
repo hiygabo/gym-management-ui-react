@@ -13,6 +13,6 @@ export const crearPlan = async (plan) =>{
     return respuesta.data;
 }
 export const eliminarPlan = async (id) =>{
-    const respuesta = await api.post(`/planes/${id}`);
+    const respuesta = await api.delete(`/planes/${id}`);
     return respuesta.data;
 }
