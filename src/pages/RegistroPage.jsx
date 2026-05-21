@@ -11,6 +11,7 @@ function RegistroPage(){
         maternoCliente: '', 
         correoCliente: '',
         telefonoCliente: '',
+        carnetCliente: '',
         comprobante:'',
         plan:{
             idPlan: ''
@@ -55,6 +56,7 @@ function RegistroPage(){
         <div>
             <h1>¡Inscribete ahora mismo!</h1>
             <form onSubmit={handleSubmit}>
+                <input type="text" name="carnetCliente" placeholder="Tu carnet" value={formData.carnetCliente} onChange={handleChange} required />
                 <input type="text" name="nombreCliente" placeholder="Tu Nombre" value={formData.nombreCliente} onChange={handleChange} required />
                 <input type="text" name="paternoCliente" placeholder="Apellido Paterno" value={formData.paternoCliente} onChange={handleChange} required />
                 <input type="text" name="maternoCliente" placeholder="Apellido Materno" value={formData.maternoCliente} onChange={handleChange} required />
